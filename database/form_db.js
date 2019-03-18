@@ -19,7 +19,7 @@ const formSchema = new mongoose.Schema({
 const Form = mongoose.model('Form', formSchema);
 
 let save = (formEntry) => {
-  console.log(formEntry); //returning undefined
+  console.log(formEntry, 'SAVE IS RUNNING'); //returning undefined
   let newForm = new Form({
      patientname: formEntry.patientname,
      preferredname: formEntry.preferredname,
@@ -33,12 +33,7 @@ let save = (formEntry) => {
      notes: formEntry.notes,
      createdAt: Date.now()
   });
-  newForm.save(err => {
-    if (err) {
-      console.log('Error saving form data to database', err)
-      return (err);
-    }
-  });
+  return newForm.save()
 };
 
 module.exports = {

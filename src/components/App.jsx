@@ -63,12 +63,12 @@ getForms () {
     $.ajax({
       url: '/api/forms',
       type: 'POST',
-      data: {formData},
+      data: JSON.stringify({formData}),
+      contentType: 'application/json',
       success: function(results){
         that.getForms();
       },
       error: function(err) {
-        console.log('THIS IS ERROR FORM DATA', formData)
         console.log('Error in client-side AJAX POST request')
       }
     });

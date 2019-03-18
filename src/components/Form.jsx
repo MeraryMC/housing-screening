@@ -1,4 +1,5 @@
 import React from 'react';
+import Popup from "reactjs-popup";
 import $ from 'jquery';
 import App from './App.jsx';
 
@@ -35,8 +36,20 @@ class Form extends React.Component {
 
   sendToApp(event) {
     event.preventDefault();
-    console.log(this.state);
     this.props.handleSubmit(this.state);
+    this.setState ({
+      patientname: '',
+      preferredname: '',
+      pronouns: '',
+      pasttwomonths: '',
+      nexttwomonths: '',
+      conflict: '',
+      options: '',
+      refer: '',
+      contact: '',
+      notes: '',
+      createdAt: Date.now()
+    })
   }
 
 render() {
@@ -79,7 +92,26 @@ render() {
              10. Notes: <input name='notes' type='text' value={this.state.notes} onChange={this.handleInputChange}/>
             </div>
             <div className='fields'>
-              <button type="submit"> Save Response </button>
+            <Popup trigger={<button type="submit" className="save-button"> Save Response </button>} modal>
+            {close => (
+              <div className="modal">
+              <a className="close" onClick={close}>
+              &times;
+              </a>
+                <div className="header"> Your Response Has Been Submitted </div>
+                <div className="content">
+                 {' '}
+                 Patient responses are viewable in the provider page.
+                </div>
+              <div className="actions">
+                <button
+                  className="button"
+                  onClick={() => {
+                  console.log('modal closed ')
+                  close() }}> Close </button>
+              </div>
+                </div>)}
+              </Popup>
             </div>
             </form>
           </div>
@@ -89,3 +121,9 @@ render() {
 }
 
 export default Form;
+
+
+
+ // <Popup trigger={<button type="submit"> Save Response </button>} position="center">
+ //                <div> Response Submitted </div>
+ //              </Popup>

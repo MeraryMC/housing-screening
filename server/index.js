@@ -23,7 +23,8 @@ app.get('/api/forms', function(req, res) {
 
 app.post('/api/forms', function(req, res) {
   console.log(req.body.formData);
-  save(req.body);
+  save(req.body.formData)
+    .then(() => res.send('CREATED')); //this is ending my response
 });
 
 
