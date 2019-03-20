@@ -101,7 +101,7 @@ render() {
                 <div className="header"> Your Response Has Been Submitted </div>
                 <div className="content">
                  {' '}
-                 Patient responses are viewable in the provider page.
+                 Patient responses are viewable in the patient records page.
                 </div>
               <div className="actions">
                 <button
@@ -121,9 +121,3 @@ render() {
 }
 
 export default Form;
-
-
-
- // <Popup trigger={<button type="submit"> Save Response </button>} position="center">
- //                <div> Response Submitted </div>
- //              </Popup>

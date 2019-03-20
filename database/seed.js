@@ -12,7 +12,7 @@ var formData = [
     refer: 'yes',
     contact: '555-555-555',
     notes: 'patient seems very anxious about her housing situation',
-    createdAt: 'now'
+    createdAt: Date.now()
   },
     {
     patientname: 'John Smith',
@@ -25,7 +25,7 @@ var formData = [
     refer: 'yes',
     contact: 'I have no phone. You can find me at the Sober Living halfway house',
     notes: 'patient will alert us when he gets a phone',
-    createdAt: 'now'
+    createdAt: Date.now()
   }
 ];
 

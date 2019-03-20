@@ -2,6 +2,9 @@ import React from 'react';
 import $ from 'jquery';
 import Form from './Form.jsx';
 import Home from './Home.jsx';
+import Provider from './Provider.jsx';
+import OneForm from './OneForm.jsx';
+import CenterMap from './Map.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -89,7 +92,10 @@ renderPage() {
     return <Form handleSubmit={this.handleSubmit.bind(this)}/>
   }
   if (view === 'provider'){
-    return <Provider />
+    return <Provider goToPage={this.goToPage} allFormResults={this.state.allFormResults}/>
+  }
+  if (view === 'map'){
+    return <CenterMap goToPage={this.goToPage}/>
   }
 }
 
@@ -99,7 +105,7 @@ render() {
       <div>
         <div className='nav-buttons'>
           <div className='home-button' onClick={() => this.goToPage('home')}>Home</div>
-          <div className='learn-more'>Learn More</div>
+          <div className='provider-button' onClick={() => this.goToPage('provider')}>Patient Records</div>
         </div>
         <div className='main'>
           {this.renderPage()}
