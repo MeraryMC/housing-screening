@@ -10,7 +10,6 @@
     "build": "webpack --watch",
     "db": "node database/seed.js",
     "start":"node ./server/index.js",
-    "heroku-postbuild": "webpack -p",
     "dev": "nodemon ./server/index.js"
   },
   "keywords": [],
