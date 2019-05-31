@@ -5,14 +5,14 @@
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-// class SimpleMap extends Component {
-//   // static defaultProps = {
-//   //   center: {
-//   //     lat: 59.95,
-//   //     lng: 30.33
-//   //   },
-//   //   zoom: 11
-//   // };
+// class CenterMap extends Component {
+//   static defaultProps = {
+//     center: {
+//       lat: 59.95,
+//       lng: 30.33
+//     },
+//     zoom: 11
+//   };
 
 //   render() {
 //     return (
