@@ -4,7 +4,7 @@ const path = require('path');
 const {Form, save} = require('../database/form_db.js');
 
 const app = express();
-const port = 1126;
+const port = process.env.PORT || 1126;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../')));
