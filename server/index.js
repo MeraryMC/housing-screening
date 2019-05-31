@@ -8,6 +8,7 @@ const port = process.env.PORT || 1126;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(__dirname + '/dist'));
 
 //get all forms
 app.get('/api/forms', function(req, res) {
